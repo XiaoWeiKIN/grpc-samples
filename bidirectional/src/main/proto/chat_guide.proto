@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.xiaowei.chatguide";
+option java_outer_classname = "RouteGuideProto";
+option objc_class_prefix = "RTG";
+
+service ChatGuide {
+  rpc Chat(stream ChatRequest) returns (stream ChatResponse) {}
+}
+
+// 请求
+message ChatRequest {
+  int32 userId = 1;
+  string msg = 2;
+}
+// 响应
+message ChatResponse {
+  int32 userId = 1;
+  string msg = 2;
+}
+
+
